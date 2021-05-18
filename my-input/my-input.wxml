@@ -1,0 +1,7 @@
+<!--components/my-input/my-input.wxml-->
+<view class="input-line" style="border-bottom:{{borderBottom?'1rpx solid #f6f6f6':'none'}}">
+  <view class="label" style="height:{{height}};width:{{labelWidth}};text-align:{{labelAlign}};" wx:if="{{label}}">{{label}}</view>
+  <view class="input-out" style="min-height:{{height}};">
+    <textarea name="{{name}}" show-confirm-bar="{{false}}" auto-height="{{true}}" bindinput="inputValue" bindblur="inputBlur" value="{{inputValue}}" placeholder-class="placeholder-class" class="text-area" placeholder="{{placeholder}}"></textarea>
+  </view>
+</view>
