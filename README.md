@@ -17,4 +17,4 @@
 
 #type 仅支持text-area 和 password 不传默认为text-area
 
-#height 输入框高度 默认100rpx
+#height 输入框高度 默认100rpx，带单位传入，支持任何单位，不支持百分比
