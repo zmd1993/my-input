@@ -2,6 +2,7 @@
 微信小程序输入框，用来解决input标签占位符闪动，以及切换input键盘收缩又弹起。tx不改，我们就自己写一个。
 
 支持属性：
+
 #placeholder 占位符
 
 #borderBottom 底部边框 1rpx #f6f6f6
