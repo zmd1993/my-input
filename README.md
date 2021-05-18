@@ -5,7 +5,7 @@
 
 #placeholder 占位符
 
-#borderBottom 底部边框 1rpx #f6f6f6
+#borderBottom 底部边框 true或false, 颜色#f6f6f6
 
 #dataFile 输入值承接的字段，通过getCurrentPages()方法获取组件所在页面实例，内置了方法可以直接设置当前页面的dataFile值，不需要在当前页面接收值再setData,如果不需要这功能可以不传，用bind:onChange 方法接收值
 
