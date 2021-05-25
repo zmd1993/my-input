@@ -21,10 +21,6 @@ Component({
       type:String,
       value:''
     },
-    border:{
-      type:Boolean,
-      value:true
-    },
     label:{
       type:String,
       value:''
@@ -52,7 +48,7 @@ Component({
    */
   data: {
     inputValue:'',
-    trueValue:'',
+    trueValue:'',//密码类型输入框，无论输入什么都转换成●,此字段存储真正的字符串
   },
   lifetimes: {
     attached() {
@@ -67,18 +63,15 @@ Component({
    */
   methods: {
     inputValue:function(e){
+      console.log(e)
       let { value, cursor } = e.detail, { inputValue, trueValue } = this.data, { type, dataFile } = this.properties;
       if(type == 'password'){
-        let len = value.length, trueValueArray = trueValue.split('');
-        // 如果输入类型为密码框，则根据光标位置和输入长度获取输入的数字
-        if(len < trueValue.length){
-          trueValueArray.splice(cursor,1);
-        }else{
-          let val = value.split('')[cursor-1];
-          trueValueArray.splice(cursor-1,0,val);
-        }
-        trueValue = trueValueArray.join('');
-        inputValue = new Array(len).fill('*').join('');
+        let len = value.length;
+        // 如果输入类型为密码框，则根据光标位置和输入长度获取输入的字符
+        let val = value.replace(/\●/g,'');
+        let prevInputValue = value.split(val);
+        trueValue = trueValue.substring(0,prevInputValue[0].length)+val+trueValue.substring(trueValue.length-prevInputValue[1].length,trueValue.length)
+        inputValue = new Array(len).fill('●').join('');
         this.setData({inputValue,trueValue})
       }else{
         trueValue = value;
