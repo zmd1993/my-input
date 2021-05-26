@@ -40,6 +40,14 @@ Component({
     height:{
       type:String,
       value:"100rpx"
+    },
+    necessary:{
+      type:Boolean,
+      value:false
+    },
+    unit:{
+      type:String,
+      value:''
     }
   },
 
